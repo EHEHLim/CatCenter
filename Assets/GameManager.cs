@@ -10,25 +10,27 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Transform target; //ÇöÀç ¹è°æ°ú ÀÌ¾îÁö´Â ¹è°æ
-    public float scrollAmount; //ÀÌ¾îÁö´Â µÎ ¹è°æ »çÀÌÀÇ °Å¸®
-    public float moveSpeed; // ÀÌµ¿¼Óµµ
-    public Vector3 moveDirection; // ÀÌµ¿ ¹æÇâ
+    public Transform target; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+    public float scrollAmount; //ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
+    public float moveSpeed; // ï¿½Ìµï¿½ï¿½Óµï¿½
+    public Vector3 moveDirection; // ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    private bool alive = true; // ½ºÆäÀÌ½º¹Ù Àç½ÃÀÛ
+    private bool alive = true; // ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 
     private GameObject Cat;
-    public float Power = 0.5f;// ÇÃ·¹ÀÌ¾î ¿òÁ÷ÀÓ(AddForce)
+    public float Power = 0.5f;// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(AddForce)
 
-    public bool start = false; // ½ºÆäÀÌ½º¹Ù ´©¸£¸é ½ÃÀÛ
+    public bool start = false; // ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    private bool delay = false; //½ºÆäÀÌ½º¹Ù¸¦ ´­·¶À» ¶§ Ã³À½ ½ÃÀÛ°ú Àç½ÃÀÛÀ» ³ª´²ÁÖ´Â º¯¼ö(Ã³À½ ¾À¿¡¼­ °°ÀÌ ÀÎ½ÄµÇ¸é ÆäÀÌµå¾Æ¿ô È­¸é¾øÀÌ ¹Ù·Î ³Ñ¾î°¨)
+    private bool delay = false; //ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½Û°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½(Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ÄµÇ¸ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ È­ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½Ñ¾î°¨)
 
-    public Image Panel;        // ÆäÀÌµå¾Æ¿ô
+    public Image Panel;        // ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½
     private float time = 0f;
     private float F_time = 1f;
 
-    IEnumerator FadeOut() //ÆäÀÌµå¾Æ¿ô ÄÚ·çÆ¾
+
+
+    IEnumerator FadeOut() //ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ ï¿½Ú·ï¿½Æ¾
     {
         Panel.gameObject.SetActive(true);
         time = 0f;
@@ -47,11 +49,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Cat = GameObject.FindGameObjectWithTag("Cat"); //ÇÃ·¹ÀÌ¾î
+        Cat = GameObject.FindGameObjectWithTag("Cat"); //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision) //Ãæµ¹ ½Ã °ÔÀÓ Á¾·á
+    void OnCollisionEnter2D(Collision2D collision) //ï¿½æµ¹ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         if(gameObject.CompareTag("Cat"))
             if (collision.gameObject.name == "Ground")      
@@ -67,30 +69,30 @@ public class GameManager : MonoBehaviour
     {
         
 
-        if (gameObject.CompareTag("BackGround"))  //¹è°æ ¿òÁ÷ÀÓ
+        if (gameObject.CompareTag("BackGround"))  //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             transform.position += moveDirection * moveSpeed * Time.deltaTime;
 
             
-            if (transform.position.x <= -scrollAmount)  //¹è°æÀÌ ¼³Á¤µÈ ¹üÀ§¸¦ ¹þ¾î³ª¸é À§Ä¡ Àç¼³Á¤
+            if (transform.position.x <= -scrollAmount)  //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³ªï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ç¼³ï¿½ï¿½
             {
                 transform.position = target.position - moveDirection * scrollAmount;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && delay == false) //ÆäÀÌµå¾Æ¿ô ÄÚ·çÆ¾
+        if (Input.GetKeyDown(KeyCode.Space) && delay == false) //ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ ï¿½Ú·ï¿½Æ¾
         {
             StartCoroutine(FadeOut());
             delay = true;
         }
 
-            if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene().buildIndex == 0)    //½ºÆäÀÌ½º¹Ù·Î °ÔÀÓ ½ÃÀÛ
+            if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene().buildIndex == 0)    //ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
-            Invoke("GameStart", 1f); //¾ÀÀüÈ¯ µô·¹ÀÌ
+            Invoke("GameStart", 1f); //ï¿½ï¿½ï¿½ï¿½È¯ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
 
 
-        if (delay == true && alive == false) //½ºÆäÀÌ½º¹Ù·Î °ÔÀÓ Àç½ÃÀÛ
+        if (delay == true && alive == false) //ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -100,14 +102,14 @@ public class GameManager : MonoBehaviour
                 }
         }
         
-        if (Input.GetKeyDown(KeyCode.Escape))   //esc·Î ½ÃÀÛÈ­¸éÀ¸·Î º¹±Í
+        if (Input.GetKeyDown(KeyCode.Escape))   //escï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
             delay = false;
         }
 
-        if (gameObject.CompareTag("Cat")) //¹æÇâÅ°·Î ¿òÁ÷ÀÌ±â
+        if (gameObject.CompareTag("Cat")) //ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -123,7 +125,7 @@ public class GameManager : MonoBehaviour
 
     void GameStart() 
     { 
-           SceneManager.LoadScene(1);      //½ÃÀÛ¾À = 0, ¸ÞÀÎ¾À = 1
+           SceneManager.LoadScene(1);      //ï¿½ï¿½ï¿½Û¾ï¿½ = 0, ï¿½ï¿½ï¿½Î¾ï¿½ = 1
            start = true;
     }
 

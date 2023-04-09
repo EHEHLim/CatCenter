@@ -21,7 +21,7 @@ public class CurrentScore : MonoBehaviour
     {
 
         score += Time.deltaTime * scorespeed;
-        text_scoreUI.text = "현재점수 : " + (int)score;
+        text_scoreUI.text = "Score : " + (int)score;
 
     }
 }
