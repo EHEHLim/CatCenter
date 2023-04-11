@@ -4,13 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BackGround
-  - Cat
-  - GameStart
-  - Escape
-  - Score
-  - Image
-  - Panel
+  - cat
+  - ground
+  - background
   layers:
   - Default
   - TransparentFX
